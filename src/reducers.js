@@ -1,4 +1,17 @@
 // reducers:
+const showBack = (state = false, action) => {
+	if (action.type === 'SHOW_BACK') return action.data || false;
+	else return state;
+}
+
+const cardFilter = (state = '', action) => {
+	switch (action.type) {
+		case 'FILTER_CARDS': return action.data;
+		default: return state;
+
+	}
+}
+
 // state here refers to the array of cards
 const cards = (state = [], action) => {
 	switch (action.type) {
@@ -40,4 +53,4 @@ const addingDeck = (state = false, action) => {
 	}
 }
 
-export {cards, decks, addingDeck};
+export {cards, decks, addingDeck, cardFilter, showBack};

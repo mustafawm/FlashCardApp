@@ -13,10 +13,10 @@ reducers.routing = routerReducer;
 
 // components
 import App from './components/App';
+import StudyModal from './components/StudyModal';
 import VisibleCards from './components/VisibleCards';
 import NewCardModal from './components/NewCardModal';
 import EditCardModal from './components/EditCardModal';
-
 
 const store = Redux.createStore(Redux.combineReducers(reducers), localStore.get());
 const history = syncHistoryWithStore(browserHistory, store);
@@ -32,7 +32,8 @@ function run() {
 				<Route path='/deck/:deckId' component={VisibleCards} >
 					<Route path='/deck/:deckId/new' component={NewCardModal} />
 					<Route path='/deck/:deckId/edit/:cardId' component={EditCardModal} />
-				</Route>
+					<Route path='/deck/:deckId/study' component={StudyModal} />
+			</Route>
 			</Route>
 		</Router>
 	</Provider>, document.getElementById('root'));
