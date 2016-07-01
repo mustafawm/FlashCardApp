@@ -7,6 +7,7 @@
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-react": "^6.5.0",
     "babelify": "^7.3.0",
+    "fuzzysearch": "^1.0.3",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
     "react-redux": "^4.4.5",
@@ -18,9 +19,9 @@
   "devDependencies": {},
   "scripts": {
     "build": "watchify src/main.js -o public/bundle.js -t [babelify --presets [react es2015] ]",
-    "server": "cd public; live-server --port=5000 --entry-file=index.html"
+    "start": "cd public; live-server --port=5000 --entry-file=index.html"
   },
   "keywords": [],
-  "author": "",
+  "author": "Mustafa Al-Saegh",
   "license": "ISC"
 }

@@ -1,6 +1,8 @@
 import React from 'react';
-import Sidebar from './Sidebar';
 import {connect} from 'react-redux';
+
+import Toolbar from './Toolbar';
+import Sidebar from './Sidebar';
 
 const mapStateToProps = (state, router) => ({
 	deckId: router.params.deckId
@@ -8,6 +10,7 @@ const mapStateToProps = (state, router) => ({
 
 const App = (props) => {
 	return (<div className='app'>
+		<Toolbar deckId={props.deckId}/>
 		<Sidebar />
 		<h2>Deck id is: {props.deckId}</h2>
 		{props.children}
